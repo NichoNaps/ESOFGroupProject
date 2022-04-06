@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import Units.Cup;
-import Units.FoodUnits;
 import Units.Gram;
+import Units.Unit;
 
 
 
 public class Ingredient {
 
-    private ArrayList<FoodUnits> units = new ArrayList<FoodUnits>();
+    private ArrayList<Unit> units = new ArrayList<Unit>();
     private double amount = 0.0F; // in grams
 
     private String name;
@@ -22,7 +22,7 @@ public class Ingredient {
         setAmount(amountGrams);
     }
 
-    public void addUnit(FoodUnits unit) {
+    public void addUnit(Unit unit) {
         units.add(unit);
     }
 
@@ -101,7 +101,7 @@ public class Ingredient {
      * Gets the unit at the specified index.
      * Defaults to grams if we have no other units defined
      */
-    private FoodUnits getUnit(int idx)
+    private Unit getUnit(int idx)
     {
         if (this.units.size() == 0) {
             return new Gram();
