@@ -18,6 +18,7 @@ public class FoodUnits {
         return amount / perGram;
     }
 
+    //@TODO is this needed?
     public double toGrams(String input) {
         Scanner scanner = new Scanner(input);
         double amount = scanner.nextDouble();

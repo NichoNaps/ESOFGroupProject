@@ -91,7 +91,7 @@ public abstract class Ingredient {
         scanner.close();
     }
 
-   // public void getNutrients(); // @TODO what does this return?
-   // public void getRestrictions(); // @TODO what does this return?
+   // public void getNutrients(); // @TODO what does this return? implement me!
+   // public void getRestrictions(); // @TODO what does this return? implement me!
 
 }
