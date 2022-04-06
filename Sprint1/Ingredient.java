@@ -3,7 +3,13 @@ package Sprint1;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public abstract class Ingredient {
+import Units.Cup;
+import Units.FoodUnits;
+import Units.Gram;
+
+
+
+public class Ingredient {
 
     private ArrayList<FoodUnits> units = new ArrayList<FoodUnits>();
     private double amount = 0.0F; // in grams
@@ -25,14 +31,14 @@ public abstract class Ingredient {
      * @return
      */
     public void setAmount(double amount, int unitIndex) {
-        this.amount = units.get(unitIndex).toGrams(amount);
+        this.amount = getUnit(unitIndex).toGrams(amount);
     }
 
     /**
      * @return the amount in the specified units
      */
     public double getAmount(int unitIdx) {
-        return units.get(unitIdx).fromGrams(amount);
+        return getUnit(unitIdx).fromGrams(amount);
     }
 
     /**
@@ -60,7 +66,7 @@ public abstract class Ingredient {
      */
     private void viewAmountUnits() {
         for (int i = 0; i < units.size(); i++) {
-            System.out.println(i + ": " + units.get(i).getUnits());
+            System.out.println(i + ": " + getUnit(i).getUnits());
         }
     }
 
@@ -83,12 +89,35 @@ public abstract class Ingredient {
 
         // now let the user edit the amount
         System.out.println("Input the " + getName() +
-         " amount in " + units.get(unitIdx).getUnits());
-
+         " amount in " + getUnit(unitIdx).getUnits());
+        
         double amount = scanner.nextDouble();
         setAmount(amount, unitIdx);
 
         scanner.close();
+    }
+
+    /**
+     * Gets the unit at the specified index.
+     * Defaults to grams if we have no other units defined
+     */
+    private FoodUnits getUnit(int idx)
+    {
+        if (this.units.size() == 0) {
+            return new Gram();
+        }
+
+        return units.get(idx);
+    }
+
+    public static void main(String[] args)
+    {
+        Ingredient i = new Ingredient("test", 1.0F);
+        i.addUnit(new Gram());
+        i.addUnit(new Cup());
+        i.viewEditAmount();
+
+        System.out.println(i.getAmount());
     }
 
    // public void getNutrients(); // @TODO what does this return? implement me!

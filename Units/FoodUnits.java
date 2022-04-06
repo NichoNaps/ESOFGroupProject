@@ -1,6 +1,7 @@
+package Units;
 import java.util.Scanner;
 
-public class FoodUnits {
+public abstract class FoodUnits {
 
     private String units;
     private double perGram;
