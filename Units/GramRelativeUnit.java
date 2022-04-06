@@ -1,12 +1,11 @@
 package Units;
-import java.util.Scanner;
 
-public abstract class FoodUnits {
+public abstract class GramRelativeUnit implements Unit {
 
     private String units;
     private double perGram;
 
-    public FoodUnits(double perGram, String units) {
+    public GramRelativeUnit(double perGram, String units) {
         this.perGram = perGram;
         this.units = units;
     }
@@ -17,15 +16,6 @@ public abstract class FoodUnits {
 
     public double toGrams(double amount) {
         return amount / perGram;
-    }
-
-    //@TODO is this needed?
-    public double toGrams(String input) {
-        Scanner scanner = new Scanner(input);
-        double amount = scanner.nextDouble();
-        scanner.close();
-
-        return toGrams(amount);
     }
 
     public String getUnits() {
