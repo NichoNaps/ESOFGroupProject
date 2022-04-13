@@ -1,4 +1,4 @@
-package Sprint1;
+package ESOFGroupProject;
 
 public class WeeklyPlan {
 	

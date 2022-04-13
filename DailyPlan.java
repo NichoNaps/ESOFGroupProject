@@ -1,6 +1,8 @@
-package Sprint1;
+package ESOFGroupProject;
+
 import java.io.*;
 import java.util.*;
+
 public class DailyPlan extends {
 
     public ArrayList<Recipe> createPlan(){

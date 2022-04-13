@@ -1,4 +1,4 @@
-package Sprint1;
+package ESOFGroupProject;
 import java.util.*;
 
 public class GroceryList {
