@@ -9,24 +9,24 @@
  * @author Alexander Maliziola
  */
 public class Recipe {
-    String name;
-    ArrayList<Ingredient> ingredient = new ArrayList<Ingredient>();
+    private String name;
+    private ArrayList<Ingredient> ingredient = new ArrayList<Ingredient>();
     
     Recipe() {}
     
-    void setName(String n) {
+    public void setName(String n) {
         name = n;
     }
     
-    String getName() {
+    public String getName() {
         return name;
     }
     
-    void addIngredient(Ingredient i) {
+    public void addIngredient(Ingredient i) {
         ingredient.add(i)
     }
     
-    void getIngredients() {
+    public ArrayList<Ingredient> getIngredients() {
         return ingredient;
     }
 }
