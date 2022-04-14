@@ -1,4 +1,5 @@
 package ESOFGroupProject;
+
 import java.util.*;
 
 /**
@@ -20,7 +21,7 @@ public class Recipe {
     }
     
     public void addIngredient(Ingredient i) {
-        ingredient.add(i)
+        ingredient.add(i);
     }
     
     public ArrayList<Ingredient> getIngredients() {
