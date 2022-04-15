@@ -41,7 +41,8 @@ public class GroceryList {
 
     public ArrayList<String> removeItem(String s){
         if (groceryList.contains(s)){
-            System.out.println(s + " is already on your list");
+            groceryList.remove(s);
+            System.out.println(s + " has been removed from your list");
         }
         else if (!groceryList.contains(s)){
             System.out.println(s + " is not on your list");
