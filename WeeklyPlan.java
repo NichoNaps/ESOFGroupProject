@@ -65,12 +65,12 @@ public class WeeklyPlan implements IngredientProducer {
 
 			// add ingredients
 			for (Ingredient i : ingredientsAdded) {
-				o.add(i);
+				o.addIngredient(i);
 			}
 
 			// remove ingredients
 			for (Ingredient i : ingredientsRemoved) {
-				o.remove(i);
+				o.removeIngredient(i);
 			}
 		}
 
