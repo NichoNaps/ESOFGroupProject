@@ -6,6 +6,6 @@ package ESOFGroupProject;
  */
 public interface IngredientObserver {
     
-    public void add(Ingredient newIngredient);
-    public void remove(Ingredient oldIngredient);
+    public void addItem(Ingredient newIngredient);
+    public void removeItem(Ingredient oldIngredient);
 }
