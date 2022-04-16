@@ -7,7 +7,7 @@ public class Main {
 
     public Main(){
         user = new User();
-        user.start();
+        user.configure();
     }
 
     public static void main(String[] args) {
