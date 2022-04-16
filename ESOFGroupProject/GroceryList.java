@@ -2,27 +2,13 @@ package ESOFGroupProject;
 
 import java.util.*;
 
-public class GroceryList {
-    private WeeklyPlan weeklyPlan;
+public class GroceryList implements IngredientObserver {
     private ArrayList<Ingredient> groceryList;
 
-    public GroceryList(WeeklyPlan wp){
-        this.weeklyPlan = wp;
+    public GroceryList(){
         groceryList = new ArrayList<Ingredient>();
-        // get Mondays plan
-        DailyPlan monday = wp.getMonday();
-        ArrayList<Recipe> meals = monday.getRecipes();
-        // build grocery list array from ingredients in monday plan
-        for (Recipe recipe : meals){
-            // get recipe ingredients
-            for (Ingredient ingredient : recipe.getIngredients()){
-                // unique ingredients only
-                if (!groceryList.contains(ingredient.getName()))
-                    groceryList.add(ingredient);
-            }
-        }
-        // full implementation would repeat for all other days not just Monday
     }
+
     public void displayList(){
         int num = 1;
         for (Ingredient ingredient : groceryList){
