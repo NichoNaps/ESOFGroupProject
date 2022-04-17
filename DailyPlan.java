@@ -1,5 +1,7 @@
 package ESOFGroupProject;
-
+/**
+ * author of the class is Ethan Skelton
+ */
 import java.io.*;
 import java.util.*;
 
