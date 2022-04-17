@@ -49,6 +49,8 @@ public class Main {
         System.out.println(user.toString());
     }
 
+    //add, remove, clear
+
     private void updateUserInfo() {
         System.out.println("What would you like to change?");
         System.out.println(" 1. Name");

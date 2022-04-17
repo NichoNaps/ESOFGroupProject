@@ -10,6 +10,8 @@ public class User {
     private int age;
     private int weight;
     private int dailyCalories;
+    WeeklyPlan wp;
+    GroceryList gl;
 
     public User(){ }
 
@@ -18,6 +20,11 @@ public class User {
         this.age = age;
         this.weight = weight;
         this.dailyCalories = dailyCalories;
+
+        gl = new GroceryList();
+        wp = new WeeklyPlan();
+        wp.addObserver(gl);
+        wp.updateObservers();
     }
 
     public void configure(){
@@ -63,6 +70,16 @@ public class User {
 
     public void setDailyCalories(int dailyCalories) {
         this.dailyCalories = dailyCalories;
+    }
+
+    //Fill ME OUT!
+    public void viewPlan(){
+        //System.out.println(wp.toString()); //example
+    }
+
+    //Fill ME OUT!
+    public void viewGroceryList() {
+        //System.out.println(gl.toString()); //example
     }
 }
 
