@@ -11,15 +11,19 @@ public class GroceryList implements IngredientObserver {
 
     public void displayList(){
         int num = 1;
+        if(groceryList.isEmpty()){
+            System.out.println("Your grocery list is empty");
+            return;
+        }
         for (Ingredient ingredient : groceryList){
             System.out.println(num + ") " + ingredient.getName());
             num++;
         }
     }
-
+    //  addItem and removeItem functions for user-specified additions and removals
     public void addItem(String s){
         for (Ingredient ingredient : groceryList){
-            if (ingredient.getName() == s){
+            if (ingredient.getName().equals(s)){
                 System.out.println(s + " is already on your list");
                 return;
             }
@@ -30,7 +34,7 @@ public class GroceryList implements IngredientObserver {
 
     public void removeItem(String s){
         for (Ingredient ingredient : groceryList){
-            if (ingredient.getName() == s){
+            if (ingredient.getName().equals(s)){
                 groceryList.remove(ingredient);
                 System.out.println(s + " has been removed from your list");
                 return;
@@ -42,5 +46,24 @@ public class GroceryList implements IngredientObserver {
     public void clearList(){
         groceryList.clear();
         System.out.println("Grocery list has been cleared");
+    }
+
+    // addIngredient and removeIngredient for populating groceryList array
+    public void addIngredient(Ingredient item){
+        for (Ingredient ingredient : groceryList){
+            if (ingredient.getName().equals(item.getName())){
+                return;
+            }
+        }
+        groceryList.add(item);
+    }
+
+    public void removeIngredient(Ingredient item){
+        for (Ingredient ingredient : groceryList){
+            if (ingredient.getName().equals(item.getName())){
+                groceryList.remove(item);
+                return;
+            }
+        }
     }
 }

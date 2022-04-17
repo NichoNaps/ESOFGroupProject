@@ -1,6 +1,13 @@
 package ESOFGroupProject;
 
-
+/**
+ * Represents an ingredient in a recipe. 
+ * 
+ * In the future the plan would be to add 
+ * amount and allergens property. 
+ * 
+ * @author Nicholas C
+ */
 public class Ingredient implements Comparable<Ingredient> {
 
     private String name;
@@ -24,8 +31,5 @@ public class Ingredient implements Comparable<Ingredient> {
         return this.name.compareTo(other.name);
     }
     
-    @Override
-    public String toString() {
-        return this.name;
-    }
+
 }
