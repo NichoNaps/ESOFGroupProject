@@ -20,7 +20,7 @@ public class User {
         this.dailyCalories = dailyCalories;
     }
 
-    public void start(){
+    public void configure(){
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter tour Name:");
         name = scan.nextLine();
