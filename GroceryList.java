@@ -52,22 +52,18 @@ public class GroceryList implements IngredientObserver {
     public void addIngredient(Ingredient item){
         for (Ingredient ingredient : groceryList){
             if (ingredient.getName().equals(item.getName())){
-                System.out.println(ingredient.getName() + " is already on your list");
                 return;
             }
         }
-        groceryList.add(new Ingredient(item.getName()));
-        System.out.println(item.getName() + " has been added to your list");
+        groceryList.add(item);
     }
 
     public void removeIngredient(Ingredient item){
         for (Ingredient ingredient : groceryList){
             if (ingredient.getName().equals(item.getName())){
                 groceryList.remove(item);
-                System.out.println(ingredient.getName() + " is already on your list");
                 return;
             }
         }
-        System.out.println(item.getName() + " is not on your list");
     }
 }
