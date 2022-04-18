@@ -24,10 +24,22 @@ public class DailyPlan {
         
         Recipe breakfast = new Recipe();
         breakfast.setName("eggs");
+        breakfast.addIngredient("egg");
+        breakfast.addIngredient("salt");
+        breakfast.addIngredient("shredded cheese");
+        
         Recipe lunch = new Recipe();
         lunch.setName("sandwich");
+        lunch.addIngredient("bread");
+        lunch.addIngredient("sliced cheese");
+        lunch.addIngredient("ham");
+        
         Recipe dinner = new Recipe();
         dinner.setName("steak");
+        dinner.addIngredient("steak");
+        dinner.addIngredient("steak seasoning");
+        dinner.addIngredient("butter");
+        
         recipes.add(breakfast);
         recipes.add(lunch);
         recipes.add(dinner);
