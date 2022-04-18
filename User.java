@@ -77,14 +77,12 @@ public class User {
         this.dailyCalories = dailyCalories;
     }
 
-    //Fill ME OUT!
     public void viewPlan(){
-        //System.out.println(wp.toString()); //example
+        wp.view();
     }
-
-    //Fill ME OUT!
+    
     public void viewGroceryList() {
-        //System.out.println(gl.toString()); //example
+        gl.displayList();
     }
 
     public void glAdd(String s){
