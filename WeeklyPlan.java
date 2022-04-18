@@ -29,7 +29,7 @@ public class WeeklyPlan implements IngredientProducer {
 		
 		// CONFIGURE DEMO RECIPIES, 
 		// this will shunt the ingredients of DailyPlans demos recipies 
-		// into our ingredientsAdded list
+		// into our ingredientsAdded list. 
 		for (Recipe r : monday.getRecipes())
 		{
 			addRecipeIngredients(r);
