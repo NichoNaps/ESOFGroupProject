@@ -24,21 +24,21 @@ public class DailyPlan {
         
         Recipe breakfast = new Recipe();
         breakfast.setName("eggs");
-        breakfast.addIngredient("egg");
-        breakfast.addIngredient("salt");
-        breakfast.addIngredient("shredded cheese");
+        breakfast.addIngredient(new Ingredient("egg"));
+        breakfast.addIngredient(new Ingredient("salt"));
+        breakfast.addIngredient(new Ingredient("shredded cheese"));
         
         Recipe lunch = new Recipe();
         lunch.setName("sandwich");
-        lunch.addIngredient("bread");
-        lunch.addIngredient("sliced cheese");
-        lunch.addIngredient("ham");
+        lunch.addIngredient(new Ingredient("bread"));
+        lunch.addIngredient(new Ingredient("sliced cheese"));
+        lunch.addIngredient(new Ingredient("ham"));
         
         Recipe dinner = new Recipe();
         dinner.setName("steak");
-        dinner.addIngredient("steak");
-        dinner.addIngredient("steak seasoning");
-        dinner.addIngredient("butter");
+        dinner.addIngredient(new Ingredient("steak"));
+        dinner.addIngredient(new Ingredient("steak seasoning"));
+        dinner.addIngredient(new Ingredient("butter"));
         
         recipes.add(breakfast);
         recipes.add(lunch);
