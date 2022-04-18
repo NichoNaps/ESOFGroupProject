@@ -10,17 +10,17 @@ public class User {
     private int age;
     private int weight;
     private int dailyCalories;
+    WeeklyPlan wp;
+    GroceryList gl;
 
-    public User(){ }
-
-    public User(String name, int age, int weight, int dailyCalories) {
-        this.name = name;
-        this.age = age;
-        this.weight = weight;
-        this.dailyCalories = dailyCalories;
+    public User(){
+        gl = new GroceryList();
+        wp = new WeeklyPlan();
+        wp.addObserver(gl);
+        wp.updateObservers();
     }
 
-    public void start(){
+    public void configure(){
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter tour Name:");
         name = scan.nextLine();
@@ -64,5 +64,24 @@ public class User {
     public void setDailyCalories(int dailyCalories) {
         this.dailyCalories = dailyCalories;
     }
-}
 
+    public void viewPlan(){
+        wp.view();
+    }
+
+    public void viewGroceryList() {
+        gl.displayList();
+    }
+
+    public void glAdd(String s){
+        gl.addItem(s);
+    }
+
+    public void glRemove(String s){
+        gl.removeItem(s);
+    }
+
+    public void glClear(){
+        gl.clearList();
+    }
+}

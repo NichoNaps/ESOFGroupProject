@@ -18,11 +18,18 @@ public class DailyPlan {
         return recipes;
     }
 
-    private ArrayList<Recipe> populateRecipes(){ // populates the array with recipes
-        for (int i = 1; i <= iNumofMeals; i++) {
-            Recipe recipe = new Recipe();
-            recipes.add(recipe.getIngredients());
-        }
+    private void populateRecipes(){ // populates the array with recipes
+        
+        Recipe breakfast = new Recipe();
+        breakfast.setName("eggs");
+        Recipe lunch = new Recipe();
+        breakfast.setName("sandwich");
+        Recipe dinner = new Recipe();
+        breakfast.setName("steak");
+        recipes.add(breakfast);
+        recipes.add(lunch);
+        recipes.add(dinner);
+        
     }
 
 }

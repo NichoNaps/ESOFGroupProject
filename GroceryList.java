@@ -2,56 +2,68 @@ package ESOFGroupProject;
 
 import java.util.*;
 
-public class GroceryList {
-    public WeeklyPlan weeklyPlan;
-    public ArrayList<String> groceryList;
+public class GroceryList implements IngredientObserver {
+    private ArrayList<Ingredient> groceryList;
 
-    public GroceryList(WeeklyPlan wp){
-        this.weeklyPlan = wp;
-        groceryList = new ArrayList<String>();
-        // get Mondays plan
-        DailyPlan monday = wp.getMonday();
-        ArrayList<Recipe> meals = monday.getRecipes();
-        // build grocery list array from ingredients in monday plan
-        for (int i = 0; i < meals.size(); i++){
-            // get recipe ingredients
-            for (int j = 0; j < meals[i].size(); j++){
-                // unique ingredients only
-                if (!groceryList.contains(meals[i][j].getName()))
-                    groceryList.add(meals[i][j].getName());
+    public GroceryList(){
+        groceryList = new ArrayList<Ingredient>();
+    }
+
+    public void displayList(){
+        int num = 1;
+        if(groceryList.isEmpty()){
+            System.out.println("Your grocery list is empty");
+            return;
+        }
+        for (Ingredient ingredient : groceryList){
+            System.out.println(num + ") " + ingredient.getName());
+            num++;
+        }
+    }
+    //  addItem and removeItem functions for user-specified additions and removals
+    public void addItem(String s){
+        for (Ingredient ingredient : groceryList){
+            if (ingredient.getName().equals(s)){
+                System.out.println(s + " is already on your list");
+                return;
             }
         }
-        // full implementation would repeat for all other days not just Monday
-    }
-    public void displayList(){
-        for (int i = 0; i < groceryList.size(); i++){
-            System.out.println((i+1) + ") " + groceryList.get(i));
-        }
+        groceryList.add(new Ingredient(s));
+        System.out.println(s + " has been added to your list");
     }
 
-    public ArrayList<String> addItem(String s){
-        if (groceryList.contains(s)){
-            System.out.println(s + " is already on your list");
+    public void removeItem(String s){
+        for (Ingredient ingredient : groceryList){
+            if (ingredient.getName().equals(s)){
+                groceryList.remove(ingredient);
+                System.out.println(s + " has been removed from your list");
+                return;
+            }
         }
-        else if (!groceryList.contains(s)){
-            groceryList.add(s);
-            System.out.println(s + " has been added to your list");
-        }
-        return groceryList;
-    }
-
-    public ArrayList<String> removeItem(String s){
-        if (groceryList.contains(s)){
-            System.out.println(s + " is already on your list");
-        }
-        else if (!groceryList.contains(s)){
-            System.out.println(s + " is not on your list");
-        }
-        return groceryList;
+        System.out.println(s + " is not on your list");
     }
 
     public void clearList(){
         groceryList.clear();
         System.out.println("Grocery list has been cleared");
+    }
+
+    // addIngredient and removeIngredient for populating groceryList array
+    public void addIngredient(Ingredient item){
+        for (Ingredient ingredient : groceryList){
+            if (ingredient.getName().equals(item.getName())){
+                return;
+            }
+        }
+        groceryList.add(item);
+    }
+
+    public void removeIngredient(Ingredient item){
+        for (Ingredient ingredient : groceryList){
+            if (ingredient.getName().equals(item.getName())){
+                groceryList.remove(item);
+                return;
+            }
+        }
     }
 }
