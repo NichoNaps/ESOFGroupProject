@@ -3,7 +3,7 @@ package ESOFGroupProject;
 import java.util.Scanner;
 
 /**
- * @author Will Jordan
+ * @author William Jordan
  */
 public class User {
     private String name;
