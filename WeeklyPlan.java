@@ -146,7 +146,7 @@ public class WeeklyPlan implements IngredientProducer {
 						System.out.print(ings.get(i).getName() + ", ");
 					}
 				}
-				System.out.print(") ");
+				System.out.print("); ");
 			}
 			
 		}
@@ -159,19 +159,19 @@ public class WeeklyPlan implements IngredientProducer {
 	 */
 	public void view()
 	{
-		System.out.print("Monday: ");
+		System.out.print("Monday:    ");
 		printRecipies(monday);
-		System.out.print("Tuesday: ");
+		System.out.print("Tuesday:   ");
 		printRecipies(tuesday);
 		System.out.print("Wednesday: ");
 		printRecipies(wednesday);
-		System.out.print("Thursday: ");
+		System.out.print("Thursday:  ");
 		printRecipies(thursday);
-		System.out.print("Friday: ");
+		System.out.print("Friday:    ");
 		printRecipies(friday);
-		System.out.print("Saturday: ");
+		System.out.print("Saturday:  ");
 		printRecipies(saturday);
-		System.out.print("Sunday: ");
+		System.out.print("Sunday:    ");
 		printRecipies(sunday);
 	}
 	
