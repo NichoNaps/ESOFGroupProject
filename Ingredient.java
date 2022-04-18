@@ -8,7 +8,7 @@ package ESOFGroupProject;
  * 
  * @author Nicholas C
  */
-public class Ingredient implements Comparable<Ingredient> {
+public class Ingredient {
 
     private String name;
     
@@ -25,15 +25,10 @@ public class Ingredient implements Comparable<Ingredient> {
      * 
      * note: if we add other ingredient attributes,
      * we will need to change this method.
+     * 
+     * @author Amanda F
      */
-    
 	@Override
-	/*
-    public int compareTo(Ingredient other) {
-        return this.name.compareTo(other.name);
-    }
-    */
-	
 	public boolean equals(Object o){
 			//reference of both object
 			if(this == o) return true;
