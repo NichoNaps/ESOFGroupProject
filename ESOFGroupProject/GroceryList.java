@@ -1,5 +1,5 @@
 package ESOFGroupProject;
-
+// Author: Emily Foss
 import java.util.*;
 
 public class GroceryList implements IngredientObserver {
