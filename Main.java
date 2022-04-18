@@ -2,6 +2,9 @@ package ESOFGroupProject;
 
 import java.util.Scanner;
 
+/**
+ * @author William Jordan
+ */
 public class Main {
     User user;
 
