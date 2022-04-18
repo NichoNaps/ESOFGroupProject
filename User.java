@@ -13,7 +13,12 @@ public class User {
     WeeklyPlan wp;
     GroceryList gl;
 
-    public User(){ }
+    public User(){
+        gl = new GroceryList();
+        wp = new WeeklyPlan();
+        wp.addObserver(gl);
+        wp.updateObservers();
+    }
 
     public User(String name, int age, int weight, int dailyCalories) {
         this.name = name;
@@ -72,14 +77,23 @@ public class User {
         this.dailyCalories = dailyCalories;
     }
 
-    //Fill ME OUT!
     public void viewPlan(){
-        //System.out.println(wp.toString()); //example
+        wp.view();
     }
 
-    //Fill ME OUT!
     public void viewGroceryList() {
-        //System.out.println(gl.toString()); //example
+        gl.displayList();
+    }
+
+    public void glAdd(String s){
+        gl.addItem(s);
+    }
+
+    public void glRemove(String s){
+        gl.removeItem(s);
+    }
+
+    public void glClear(){
+        gl.clearList();
     }
 }
-
