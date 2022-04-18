@@ -10,8 +10,8 @@ public class User {
     private int age;
     private int weight;
     private int dailyCalories;
-    WeeklyPlan wp;
-    GroceryList gl;
+    private WeeklyPlan wp;
+    private GroceryList gl;
 
     public User(){
         gl = new GroceryList();
