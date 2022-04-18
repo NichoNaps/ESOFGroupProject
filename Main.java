@@ -44,11 +44,11 @@ public class Main {
 
 
     private void viewPlan(){
-        System.out.println(user.toString());
+        user.viewPlan();
     }
 
     private void viewGroceryList() {
-        System.out.println(user.toString());
+        user.viewGroceryList();
     }
 
 
