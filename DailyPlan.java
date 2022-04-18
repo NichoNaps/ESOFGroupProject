@@ -1,5 +1,7 @@
 package ESOFGroupProject;
-
+/**
+ * @author Ethan Skelton
+ */
 import java.io.*;
 import java.util.*;
 
