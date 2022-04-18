@@ -25,9 +25,9 @@ public class DailyPlan {
         Recipe breakfast = new Recipe();
         breakfast.setName("eggs");
         Recipe lunch = new Recipe();
-        breakfast.setName("sandwich");
+        lunch.setName("sandwich");
         Recipe dinner = new Recipe();
-        breakfast.setName("steak");
+        dinner.setName("steak");
         recipes.add(breakfast);
         recipes.add(lunch);
         recipes.add(dinner);
