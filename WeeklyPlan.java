@@ -126,22 +126,29 @@ public class WeeklyPlan implements IngredientProducer {
 
 		// print otu the recipes
 		for (Recipe r : dp.getRecipes()) {
-			System.out.print("\t" + r.getName() + " (");
+			System.out.print(r.getName() + " ");
 
 			// print out the ingredients
+			
 			ArrayList<Ingredient> ings = r.getIngredients();
-
-			for (int i = 0; i < ings.size(); i++) {
-
-				// don't print comma on last run
-				if (i == ings.size() - 1) {
-					System.out.print(ings.get(i).getName());
-				} 
-				else {
-					System.out.print(ings.get(i).getName() + ", ");
+			
+			// only print ingredients if they exist
+			if (ings.size() > 0)
+			{
+				System.out.print("(");
+				for (int i = 0; i < ings.size(); i++) {
+	
+					// don't print comma on last run
+					if (i == ings.size() - 1) {
+						System.out.print(ings.get(i).getName());
+					} 
+					else {
+						System.out.print(ings.get(i).getName() + ", ");
+					}
 				}
-				
+				System.out.print(") ");
 			}
+			
 		}
 
 		System.out.println(); // new line
