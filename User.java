@@ -20,18 +20,6 @@ public class User {
         wp.updateObservers();
     }
 
-    public User(String name, int age, int weight, int dailyCalories) {
-        this.name = name;
-        this.age = age;
-        this.weight = weight;
-        this.dailyCalories = dailyCalories;
-
-        gl = new GroceryList();
-        wp = new WeeklyPlan();
-        wp.addObserver(gl);
-        wp.updateObservers();
-    }
-
     public void configure(){
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter tour Name:");
@@ -80,7 +68,7 @@ public class User {
     public void viewPlan(){
         wp.view();
     }
-    
+
     public void viewGroceryList() {
         gl.displayList();
     }

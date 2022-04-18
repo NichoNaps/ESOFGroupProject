@@ -42,7 +42,6 @@ public class Main {
         }
     }
 
-
     private void viewPlan(){
         user.viewPlan();
     }
@@ -51,8 +50,6 @@ public class Main {
         user.viewGroceryList();
     }
 
-
-    //add, remove, clear
     public void updateGroceryList(){
         System.out.println("What would you like to change?");
         System.out.println(" 1. Add Ingredient");
