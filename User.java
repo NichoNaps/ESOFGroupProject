@@ -34,13 +34,13 @@ public class User {
 
     public void configure(){
         Scanner scan = new Scanner(System.in);
-        System.out.println("Enter tour Name:");
+        System.out.println("Enter your name:");
         name = scan.nextLine();
         System.out.println("How old are you?");
         age = scan.nextInt();
         System.out.println("How much do you weigh?");
         weight = scan.nextInt();
-        System.out.println("what is your daily calorie goal?");
+        System.out.println("What is your daily calorie goal?");
         dailyCalories = scan.nextInt();
         System.out.println("Thanks " + name + " you are ready to go!");
     }
