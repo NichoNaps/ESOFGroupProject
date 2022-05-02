@@ -123,14 +123,15 @@ public class WeeklyPlan implements IngredientProducer {
 	 * @param dp the daily plan to print
 	 */
 	private void printRecipies(DailyPlan dp) {
+		ArrayList<Recipe> recps = dp.getRecipes();
 
-		// print otu the recipes
-		for (Recipe r : dp.getRecipes()) {
-			System.out.print(r.getName() + " ");
+		// print out the recipes
+		for (int x = 0; x < recps.size(); x++) {
+			System.out.print("\t" + recps.get(x).getName() + " ");
 
 			// print out the ingredients
 			
-			ArrayList<Ingredient> ings = r.getIngredients();
+			ArrayList<Ingredient> ings = recps.get(x).getIngredients();
 			
 			// only print ingredients if they exist
 			if (ings.size() > 0)
@@ -146,9 +147,13 @@ public class WeeklyPlan implements IngredientProducer {
 						System.out.print(ings.get(i).getName() + ", ");
 					}
 				}
-				System.out.print("); ");
+				System.out.print(")");
 			}
 			
+
+			if (x != recps.size() - 1) { 
+				System.out.println();	
+			}
 		}
 
 		System.out.println(); // new line
@@ -159,19 +164,19 @@ public class WeeklyPlan implements IngredientProducer {
 	 */
 	public void view()
 	{
-		System.out.print("Monday:    ");
+		System.out.println("Monday:    ");
 		printRecipies(monday);
-		System.out.print("Tuesday:   ");
+		System.out.println("Tuesday:   ");
 		printRecipies(tuesday);
-		System.out.print("Wednesday: ");
+		System.out.println("Wednesday: ");
 		printRecipies(wednesday);
-		System.out.print("Thursday:  ");
+		System.out.println("Thursday:  ");
 		printRecipies(thursday);
-		System.out.print("Friday:    ");
+		System.out.println("Friday:    ");
 		printRecipies(friday);
-		System.out.print("Saturday:  ");
+		System.out.println("Saturday:  ");
 		printRecipies(saturday);
-		System.out.print("Sunday:    ");
+		System.out.println("Sunday:    ");
 		printRecipies(sunday);
 	}
 	
